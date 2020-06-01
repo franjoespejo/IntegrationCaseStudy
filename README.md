@@ -1,2 +1,1 @@
-# IntegrationCaseStudy
-Integration Case Study 1
+# Integration Case Study 1 - Klarna

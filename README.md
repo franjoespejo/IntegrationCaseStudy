@@ -160,7 +160,7 @@ placeOrder.addEventListener("click", function (event) {
 3. Going forward with all the client-side interacctions to proceed with the order. All is handled through client-side SDK
 * Real-world phone with country code
 * Klarma-test-env card as Credit Card, [Documentation](https://developers.klarna.com/documentation/testing-environment/#test-credit-card)
-4. Place Order 
+4. Place Order usint the authorization_token from the result of point 3. 
 ```JS
 POST /payments/v1/authorizations/<authorization_token>/order
 Authorization: Basic TjEwNDcwMV9mNzIwNzIxZDdkNjY6dUVXd0syWml1MnBaS2RrMQ==

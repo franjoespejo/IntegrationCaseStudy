@@ -18,13 +18,16 @@
 * [Cancelled] -  85b0e719-f372-232b-a568-2f5ca39e3be1
 * [Refunded]  -  81b5a32e-bb9f-2ae0-bb22-b5a207adba60
 
+
 ## About
 The objetive of this document is to demostrate the understanding of the provided solutions for the Integration Case Study 1. 
 
-Altough some of the requested order cases could be contained in a same order - ie, the "cancelled order", is a "placed order" too -  there is a different order for each case in order to keep it simple for the reviewer. 
+Altough some of the requested order cases could be contained in a same order - ie, the "cancelled order", is a "placed order" too -  there is a different order for each case in order to keep it simple for the reviewer.
+
+
 
 ### Tools
-As suggested in the case statement email, the following tools have been used.
+In order to focus on the API and as suggested in the case statement email:
 * [Postman](https://postman.com)
 * [Codepen](https://codepen.io)
 
@@ -32,7 +35,7 @@ As suggested in the case statement email, the following tools have been used.
 1. Create the server-side session by a POST REQUEST 
 ```JS
 POST /payments/v1/sessions
-Authorization: Basic pwhcueUff0MmwLShJiBE9JHA==
+Authorization: Basic TjEwNDcwMV9mNzIwNzIxZDdkNjY6dUVXd0syWml1MnBaS2RrMQ==
 Content-Type: application/json
 
 {
@@ -160,7 +163,7 @@ placeOrder.addEventListener("click", function (event) {
 4. Place Order 
 ```JS
 POST /payments/v1/authorizations/<authorization_token>/order
-Authorization: Basic pwhcueUff0MmwLShJiBE9JHA==
+Authorization: Basic TjEwNDcwMV9mNzIwNzIxZDdkNjY6dUVXd0syWml1MnBaS2RrMQ==
 Content-Type: application/json
 
 {
@@ -218,6 +221,9 @@ An order to be captured needs to be previously placed.
 1. POST REQUEST to create the capture
 ```JS
 POST /ordermanagement/v1/orders/{order_id}/captures
+Authorization: Basic TjEwNDcwMV9mNzIwNzIxZDdkNjY6dUVXd0syWml1MnBaS2RrMQ==
+Content-Type: application/json
+
 {
     "captured_amount": 40000,
     "description": "string",
@@ -240,12 +246,16 @@ An order to be cancelled needs to be previously placed.
 1. POST REQUEST to cancell an order
 ```JS
 POST /ordermanagement/v1/orders/{order_id}/cancel
+Authorization: Basic TjEwNDcwMV9mNzIwNzIxZDdkNjY6dUVXd0syWml1MnBaS2RrMQ==
 ```
 ## Refunded
 An order to be refunded needs to be previously placed and captured.
 1. POST REQUEST to refund an order
 ```JS
 POST /ordermanagement/v1/orders/{order_id}/refunds
+Authorization: Basic TjEwNDcwMV9mNzIwNzIxZDdkNjY6dUVXd0syWml1MnBaS2RrMQ==
+Content-Type: application/json
+
 {
   "refunded_amount": 40000,
   "description": "Refunding the total amount",
